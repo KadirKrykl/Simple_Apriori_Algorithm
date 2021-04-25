@@ -56,6 +56,11 @@ def Apriori(T, minSup, minConfidance):
     return L[len(L)-1]
 
 
+#Arguments for program
+#sys.argv[1] = file path for transactions
+#sys.argv[2] = min support value
+#sys.argv[3] = min confidance value
+
 filename = sys.argv[1]
 try:
     minSup = float(sys.argv[2])
@@ -67,6 +72,8 @@ except IndexError:
     minConf = 0.05
 
 extension = filename.split(".")[1]
+
+#File read for txt
 if extension == "txt":
     transactionsFile = open(filename, "r")
 
@@ -81,6 +88,7 @@ if extension == "txt":
         outf.write(str(list(item)) + "\n")
     outf.close()
 
+#File read for xlsx
 elif extension == "xlsx":
     transactionsFile = Path(filename)
     wb_obj = openpyxl.load_workbook(transactionsFile)
