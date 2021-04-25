@@ -1,0 +1,2 @@
+['Cheese', 'Beef', 'Bread']
+['Milk', 'Bread', 'Clothes']
